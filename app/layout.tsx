@@ -19,6 +19,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://onboardvisa.com"),
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
   title: {
     default: "OnboardVisa - Expert Visa & Immigration Services",
     template: "%s | OnboardVisa",

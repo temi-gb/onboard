@@ -48,10 +48,9 @@ export default function HeroSection() {
 
             {/* Heading */}
             <h1
-              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''}`}
+              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} text-3xl sm:text-4xl lg:text-5xl`}
               style={{
                 fontFamily: 'Georgia, serif',
-                fontSize: '2.5rem',
                 color: '#000000',
                 textAlign: 'left',
                 lineHeight: '1.3',

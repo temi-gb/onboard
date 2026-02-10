@@ -71,10 +71,9 @@ export default function FAQ() {
     <section id="faq" className="bg-white py-20 px-6 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-4xl">
         <h2
-          className="text-center mb-12"
+          className="text-center mb-12 text-3xl sm:text-4xl lg:text-5xl"
           style={{
             fontFamily: 'Ivyprestoheadline, Georgia, sans-serif',
-            fontSize: '2.5rem',
             color: '#090909',
             fontWeight: 500,
           }}

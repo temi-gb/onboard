@@ -57,7 +57,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Left: Innovator Founder Visa - Dark Background */}
               <div className="flex flex-col p-8 lg:p-12" style={{ backgroundColor: 'rgb(10, 18, 23)', borderRadius: '24px', overflow: 'hidden' }}>
-                <h3 className="text-3xl font-semibold text-white mb-3">Innovator Founder Visa</h3>
+                <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-3">Innovator Founder Visa</h3>
                 <p className="text-lg mb-8" style={{ color: '#85898c' }}>We help founders and intending founders build endorsement-ready cases for the UK</p>
                 
                 <div className="flex flex-row gap-4 mb-8">
@@ -113,7 +113,7 @@ export default function Home() {
 
               {/* Right: Global Talent Visa - Light Background */}
               <div className="flex flex-col p-8 lg:p-12" style={{ backgroundColor: 'rgb(228, 239, 247)', borderRadius: '24px', overflow: 'hidden' }}>
-                <h3 className="text-3xl font-semibold text-[#171717] mb-3">Global Talent Visa</h3>
+                <h3 className="text-2xl sm:text-3xl font-semibold text-[#171717] mb-3">Global Talent Visa</h3>
                 <p className="text-lg mb-8" style={{ color: '#85898c' }}>We help professionals strengthen their profile and translate achievement into endorsement</p>
                 
                 <div className="flex flex-row gap-4 mb-8">
@@ -194,7 +194,7 @@ export default function Home() {
                 Partnership services
               </p>
               <h2
-                className="text-4xl lg:text-5xl font-bold mb-6"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
                 style={{
                   fontFamily: 'Ivyprestoheadline, Georgia, sans-serif',
                   color: '#090909',
