@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
                   fontWeight: 500,
                 }}
               >
-                Over 150,000
+                Over 60
                 <br />
                 experts and
                 <br />
