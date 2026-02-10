@@ -53,7 +53,7 @@ export default function HeroSection() {
                 fontFamily: 'Georgia, serif',
                 color: '#000000',
                 textAlign: 'left',
-                lineHeight: '1.3',
+                lineHeight: '1.5',
                 fontWeight: '500',
                 transitionDelay: '120ms',
               }}
@@ -74,7 +74,7 @@ export default function HeroSection() {
 
             {/* CTA */}
             <div
-              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4`}
+              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4`}
               style={{ transitionDelay: '360ms' }}
             >
               <Link
