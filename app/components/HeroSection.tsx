@@ -51,7 +51,7 @@ export default function HeroSection() {
               className={`hero-animate ${isVisible ? 'hero-animate-in' : ''}`}
               style={{
                 fontFamily: 'Georgia, serif',
-                fontSize: '2.7rem',
+                fontSize: '2.5rem',
                 color: '#000000',
                 textAlign: 'left',
                 lineHeight: '1.3',
