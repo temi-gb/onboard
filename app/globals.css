@@ -167,6 +167,44 @@ html {
   animation-name: animate__backInLeft;
 }
 
+/* ========== Glittering border animation for Powered by AI ========== */
+@keyframes glitter-shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(200%) translateY(200%) rotate(45deg);
+  }
+}
+
+.powered-by-ai-glitter {
+  position: relative;
+  overflow: hidden;
+}
+
+.powered-by-ai-glitter::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.8) 50%,
+    transparent 70%
+  );
+  animation: glitter-shimmer 4s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.powered-by-ai-glitter > * {
+  position: relative;
+  z-index: 2;
+}
+
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .hero-animate,

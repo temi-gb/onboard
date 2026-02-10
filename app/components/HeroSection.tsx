@@ -26,7 +26,7 @@ export default function HeroSection() {
             {/* Badge */}
             <Link
               href="/blog"
-              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors mb-6 w-fit`}
+              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} powered-by-ai-glitter inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors mb-6 w-fit`}
               style={{ transitionDelay: '0ms' }}
             >
               Powered by AI
@@ -53,7 +53,7 @@ export default function HeroSection() {
                 fontFamily: 'Georgia, serif',
                 color: '#000000',
                 textAlign: 'left',
-                lineHeight: '1.5',
+                lineHeight: '1.3',
                 fontWeight: '500',
                 transitionDelay: '120ms',
               }}
@@ -136,7 +136,7 @@ export default function HeroSection() {
                   style={{ transitionDelay: '750ms' }}
                 >
                   <AnimatedStatCard
-                    value={1300}
+                    value={60}
                     suffix="+"
                     label="Guided applicants"
                     delay={100}
@@ -163,7 +163,7 @@ export default function HeroSection() {
                 style={{ transitionDelay: '750ms' }}
               >
                 <AnimatedStatCard
-                  value={1300}
+                  value={60}
                   suffix="+"
                   label="Guided applicants"
                   delay={100}
