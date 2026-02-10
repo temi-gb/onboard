@@ -18,9 +18,9 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-white">
+    <section ref={sectionRef} className="relative bg-white -mt-8">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12 items-center min-h-[calc(100vh-4rem)] py-20 lg:py-28">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12 items-center min-h-[calc(100vh-4rem)] py-16 lg:py-24">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
             {/* Badge */}
@@ -58,7 +58,7 @@ export default function HeroSection() {
                 transitionDelay: '120ms',
               }}
             >
-              Your Gateway to the UK Innovator Founder & Global Talent Visas.
+              Your Gateway to the UK Innovator Founder & Global Talent Visa.
             </h1>
 
             {/* Paragraph */}
