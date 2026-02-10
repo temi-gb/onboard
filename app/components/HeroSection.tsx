@@ -58,7 +58,7 @@ export default function HeroSection() {
                 transitionDelay: '120ms',
               }}
             >
-              Your Gateway to the UK Innovator Founder & Global Talent Visa.
+              Your Gateway to the UK Innovator Founder & Global Talent Visas.
             </h1>
 
             {/* Paragraph */}
