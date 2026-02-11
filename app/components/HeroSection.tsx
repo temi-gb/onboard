@@ -51,6 +51,7 @@ export default function HeroSection() {
               className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} text-3xl sm:text-4xl lg:text-5xl`}
               style={{
                 fontFamily: 'Georgia, serif',
+                fontSize: '2.5rem',
                 color: '#000000',
                 textAlign: 'left',
                 lineHeight: '1.3',
@@ -64,7 +65,7 @@ export default function HeroSection() {
             {/* Paragraph */}
             <p
               className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} text-lg mb-5 mt-8 max-w-xl`}
-              style={{ color: '#171717', transitionDelay: '240ms' }}
+              style={{ color: '#262626E6', fontWeight: 400, transitionDelay: '240ms' }}
             >
               We help founders and professionals shape a compelling story that
               secures endorsement and leads to a confident UK visa application.

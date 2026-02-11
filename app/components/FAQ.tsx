@@ -53,11 +53,6 @@ const faqData: FAQItem[] = [
     answer:
       "If you're unsure whether the Innovator Founder Visa or Global Talent Visa is right for you, OnboardVisa can assess your background and help you determine the most suitable UK visa route.",
   },
-  {
-    question: 'Can OnboardVisa guarantee UK visa approval?',
-    answer:
-      'No. OnboardVisa does not guarantee UK visa approval. No legitimate visa service can. We focus on building endorsement-ready UK Innovator Founder and Global Talent visa applications by strengthening your profile, evidence, and positioning to meet official criteria.',
-  },
 ];
 
 export default function FAQ() {

@@ -54,9 +54,9 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <h2 className="text-2xl font-semibold text-[#171717] mb-12">Our services</h2>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
               {/* Left: Innovator Founder Visa - Dark Background */}
-              <div className="flex flex-col p-8 lg:p-12" style={{ backgroundColor: 'rgb(10, 18, 23)', borderRadius: '24px', overflow: 'hidden' }}>
+              <div className="flex flex-col h-full p-8 lg:p-12" style={{ backgroundColor: 'rgb(10, 18, 23)', borderRadius: '24px', overflow: 'hidden' }}>
                 <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-3">Innovator Founder Visa</h3>
                 <p className="text-lg mb-8" style={{ color: '#85898c' }}>We help founders and intending founders build endorsement-ready cases for the UK</p>
                 
@@ -96,7 +96,7 @@ export default function Home() {
                 </div>
 
                 {/* Visual Placeholder - Dark Theme */}
-                <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[500px] innovator-image-hover" style={{ borderRadius: '24px', overflow: 'hidden' }}>
+                <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[500px] innovator-image-hover mt-auto" style={{ borderRadius: '24px', overflow: 'hidden' }}>
                   <Image
                     src="/uk-innovator-founder-visa-application.png"
                     alt="Applicants preparing a UK Innovator Founder visa application"
@@ -112,7 +112,7 @@ export default function Home() {
               </div>
 
               {/* Right: Global Talent Visa - Light Background */}
-              <div className="flex flex-col p-8 lg:p-12" style={{ backgroundColor: 'rgb(228, 239, 247)', borderRadius: '24px', overflow: 'hidden' }}>
+              <div className="flex flex-col h-full p-8 lg:p-12" style={{ backgroundColor: 'rgb(228, 239, 247)', borderRadius: '24px', overflow: 'hidden' }}>
                 <h3 className="text-2xl sm:text-3xl font-semibold text-[#171717] mb-3">Global Talent Visa</h3>
                 <p className="text-lg mb-8" style={{ color: '#85898c' }}>We help professionals strengthen their profile and translate achievement into endorsement</p>
                 
@@ -160,7 +160,7 @@ export default function Home() {
                 </div>
 
                 {/* Image */}
-                <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[500px] innovator-image-hover" style={{ borderRadius: '24px', overflow: 'hidden' }}>
+                <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[500px] innovator-image-hover mt-auto" style={{ borderRadius: '24px', overflow: 'hidden' }}>
                   <Image
                     src="/uk-global-talent-visa-application.png"
                     alt="Professional preparing a UK Global Talent visa application"
@@ -215,7 +215,7 @@ export default function Home() {
               {/* Left Column - Image */}
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                  <Image
+        <Image
                     src="/xd.png"
                     alt="Professional UK visa consultation and partnership services"
                     fill
@@ -363,8 +363,8 @@ export default function Home() {
                   </div>
                   <p className="text-xs font-medium pt-2" style={{ color: '#000000' }}>
                   Ongoing insights & updates
-                  </p>
-                </div>
+          </p>
+        </div>
 
                 {/* Feature Box 7 */}
                 <div className="bg-gray-100 rounded-xl px-6 py-4 flex flex-col items-start gap-3">
@@ -398,7 +398,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
+        </div>
         </section>
 
         {/* FAQ Section */}
