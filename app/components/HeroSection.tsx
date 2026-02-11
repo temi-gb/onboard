@@ -114,53 +114,23 @@ export default function HeroSection() {
                 style={{ borderRadius: '16px' }}
               />
 
-              {/* Statistics Cards Overlay - Desktop */}
+              {/* Stat cards - gentle float animation on load */}
+              {/* Card: over 10+ Endorsed Secured (top-left) */}
               <div
-                className={`hero-stats-animate ${isVisible ? 'hero-stats-animate-in' : ''} absolute top-6 left-6 sm:bottom-6 sm:top-auto sm:left-6 flex flex-row gap-3`}
+                className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} stat-card-hover hero-stat-float absolute top-6 left-6 bg-[#FEF3C7] rounded-xl p-3 sm:p-5 shadow-lg min-w-[110px] sm:min-w-[160px]`}
+                style={{ transitionDelay: '600ms' }}
               >
-                {/* Stat Card 1 */}
-                <div
-                  className="hero-stat-card stat-card-hover bg-[#FEF3C7] rounded-xl p-3 sm:p-5 shadow-lg min-w-[110px] sm:min-w-[160px]"
-                  style={{ transitionDelay: '600ms' }}
-                >
-                  <AnimatedStatCard
-                    value={10}
-                    prefix="over "
-                    suffix="+"
-                    label="Endorsed Secured"
-                  />
-                </div>
-
-                {/* Stat Card 2 - Desktop only */}
-                <div
-                  className="hero-stat-card stat-card-hover hidden sm:block bg-[#FEF3C7] rounded-xl p-3 sm:p-5 shadow-lg min-w-[110px] sm:min-w-[160px]"
-                  style={{ transitionDelay: '750ms' }}
-                >
-                  <AnimatedStatCard
-                    value={60}
-                    suffix="+"
-                    label="Guided applicants"
-                    delay={100}
-                  />
-                </div>
-
-                {/* Stat Card 3 - Desktop only */}
-                <div
-                  className="hero-stat-card stat-card-hover hidden sm:block bg-[#FEF3C7] rounded-xl p-3 sm:p-5 shadow-lg min-w-[110px] sm:min-w-[160px]"
-                  style={{ transitionDelay: '900ms' }}
-                >
-                  <div className="text-2xl sm:text-3xl font-bold text-[#171717]">
-                    1:1
-                  </div>
-                  <div className="text-xs sm:text-sm text-[#171717] mt-1 opacity-80">
-                    Applicant support
-                  </div>
-                </div>
+                <AnimatedStatCard
+                  value={10}
+                  prefix="over "
+                  suffix="+"
+                  label="Endorsed Secured"
+                />
               </div>
 
-              {/* Card 2 - Mobile only */}
+              {/* Card: 60+ Guided applicants (bottom-right) */}
               <div
-                className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} stat-card-hover absolute bottom-6 right-2 sm:hidden bg-[#FEF3C7] rounded-xl p-3 shadow-lg min-w-[110px]`}
+                className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} stat-card-hover hero-stat-float absolute bottom-6 right-2 bg-[#FEF3C7] rounded-xl p-3 sm:p-5 shadow-lg min-w-[110px] sm:min-w-[160px]`}
                 style={{ transitionDelay: '750ms' }}
               >
                 <AnimatedStatCard
@@ -171,13 +141,13 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* Card 3 - Mobile only */}
+              {/* Card: 1:1 support (bottom-left) */}
               <div
-                className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} stat-card-hover absolute bottom-6 left-6 sm:hidden bg-[#FEF3C7] rounded-xl p-3 shadow-lg min-w-[110px]`}
+                className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} stat-card-hover hero-stat-float absolute bottom-6 left-6 bg-[#FEF3C7] rounded-xl p-3 sm:p-5 shadow-lg min-w-[110px] sm:min-w-[160px]`}
                 style={{ transitionDelay: '900ms' }}
               >
-                <div className="text-2xl font-bold text-[#171717]">1:1</div>
-                <div className="text-xs text-[#171717] mt-1 opacity-80">
+                <div className="text-2xl sm:text-3xl font-bold text-[#171717]">1:1</div>
+                <div className="text-xs sm:text-sm text-[#171717] mt-1 opacity-80">
                   Applicant support
                 </div>
               </div>
