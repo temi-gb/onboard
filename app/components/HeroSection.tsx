@@ -75,7 +75,7 @@ export default function HeroSection() {
 
             {/* CTA */}
             <div
-              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} mt-5 flex flex-col sm:flex-row items-start sm:items-center gap-4`}
+              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} mt-3 flex flex-col sm:flex-row items-start sm:items-center gap-4`}
               style={{ transitionDelay: '360ms' }}
             >
               <Link

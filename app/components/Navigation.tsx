@@ -39,13 +39,13 @@ export default function Navigation() {
         <div className="px-6 lg:px-12 xl:px-16">
           {/* Announcement Banner */}
           <div 
-            className="mt-3 mb-3 animate__animated animate__backInLeft"
+            className="mt-2 mb-2 animate__animated animate__backInLeft"
             style={{
               display: 'flex',
               alignItems: 'center',
               width: '100%',
               background: 'rgb(182, 234, 31)',
-              padding: '10px',
+              padding: '7px 10px',
               gap: '8px',
               borderRadius: '100px',
             }}
