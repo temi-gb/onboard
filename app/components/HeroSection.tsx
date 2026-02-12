@@ -102,7 +102,7 @@ export default function HeroSection() {
             </p>
             
             {/* Animated CTA Text - Sequential */}
-            <div className="text-lg italic max-w-xl">
+            <div className="text-lg max-w-xl bg-gray-100 px-4 py-3 rounded-lg inline-block">
               <span
                 className={`inline-block transition-all duration-500 ${
                   showPhrase1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
@@ -127,7 +127,7 @@ export default function HeroSection() {
                 }`}
                 style={{ color: '#262626E6' }}
               >
-                Get approved!
+                Get Visa approved!
               </span>
             </div>
 
