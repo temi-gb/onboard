@@ -6,6 +6,7 @@ import FAQ from './components/FAQ';
 import TestimonialsSection from './components/TestimonialsSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import HeroSection from './components/HeroSection';
+import BookSessionButton from './components/BookSessionButton';
 
 export const metadata: Metadata = generateMetadata({
   title: 'Home',
@@ -81,18 +82,9 @@ export default function Home() {
                   >
                     Explore
                   </Link>
-                  <Link
-                    href="/innovator-founder-visa"
-                    className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-medium text-[#171717] hover:opacity-90 transition-opacity"
-                    style={{
-                      backgroundColor: '#e6ff32',
-                      color: '#000',
-                      border: '0.5px solid #000',
-                      borderRadius: '50px',
-                    }}
-                  >
-                    Book a session
-                  </Link>
+                  <BookSessionButton
+                    className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
+                  />
                 </div>
 
                 {/* Visual Placeholder - Dark Theme */}
@@ -137,26 +129,10 @@ export default function Home() {
                   >
                     Explore
                   </Link>
-                  <Link
-                    href="/global-talent-visa"
+                  <BookSessionButton
+                    variant="outline"
                     className="inline-flex items-center justify-center"
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                      fontSize: '14px',
-                      fontWeight: 450,
-                      padding: '8px 16px',
-                      borderRadius: '24px',
-                      border: '1px solid rgba(0, 0, 0, 0.1)',
-                      transition: '0.2s',
-                      color: 'rgb(10, 18, 23)',
-                      backgroundColor: 'transparent',
-                    }}
-                  >
-                    Book a session
-                  </Link>
+                  />
                 </div>
 
                 {/* Image */}
@@ -390,12 +366,10 @@ export default function Home() {
                 </div>
 
                 {/* Feature Box 8 - CTA Button */}
-                <Link
-                  href="/innovator-founder-visa"
-                  className="bg-black rounded-xl p-6 flex items-center justify-center text-white font-medium hover:bg-black/78 hover:border-2 hover:border-black transition-all duration-300"
-                >
-                  Book a session
-                </Link>
+                <BookSessionButton
+                  variant="black"
+                  className="rounded-xl p-6 flex items-center justify-center font-medium hover:bg-black/78 hover:border-2 hover:border-black transition-all duration-300"
+                />
               </div>
             </div>
         </div>

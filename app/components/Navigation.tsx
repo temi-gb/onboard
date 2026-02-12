@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import CalendlyModal from './CalendlyModal';
 
 const navItems = [
   { href: '/innovator-founder-visa', label: 'Innovator Founder Visa', hasDropdown: false },
@@ -16,6 +17,7 @@ export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -148,24 +150,24 @@ export default function Navigation() {
           {/* Right Side - Button */}
           <div className="hidden md:flex md:items-center z-10">
             {/* Try for free Button */}
-            <Link
-              href="/innovator-founder-visa"
+            <button
+              onClick={() => setIsCalendlyOpen(true)}
               className="rounded-lg border border-[#1c1819] px-4 py-2 text-sm font-medium text-[#1c1819] hover:opacity-90 transition-opacity"
               style={{ backgroundColor: '#e6ff32' }}
             >
               Book a session
-            </Link>
+            </button>
           </div>
 
           {/* Mobile - Book a session button and menu button */}
           <div className="md:hidden flex items-center gap-2 flex-shrink-0">
-            <Link
-              href="/innovator-founder-visa"
+            <button
+              onClick={() => setIsCalendlyOpen(true)}
               className="rounded-lg border border-[#1c1819] px-2 py-1 text-[12px] font-medium text-[#1c1819] hover:opacity-90 transition-opacity whitespace-nowrap"
               style={{ backgroundColor: '#e6ff32' }}
             >
               Book a session
-            </Link>
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="rounded-md p-2 text-gray-300 hover:bg-gray-700"
@@ -234,19 +236,22 @@ export default function Navigation() {
               </Link>
             ))}
             <div className="mt-4 flex flex-col gap-2 px-3">
-              <Link
-                href="/innovator-founder-visa"
-                onClick={() => setIsOpen(false)}
+              <button
+                onClick={() => {
+                  setIsCalendlyOpen(true);
+                  setIsOpen(false);
+                }}
                 className="rounded-lg border border-gray-600 px-4 py-2 text-sm font-medium text-[#1c1819] text-center hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: '#e6ff32' }}
               >
                 Book a session
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       )}
       </div>
+      <CalendlyModal isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </>
   );
 }

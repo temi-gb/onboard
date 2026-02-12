@@ -4,9 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AnimatedStatCard from './AnimatedStatCard';
+import CalendlyModal from './CalendlyModal';
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [showPhrase1, setShowPhrase1] = useState(false);
+  const [showPhrase2, setShowPhrase2] = useState(false);
+  const [showPhrase3, setShowPhrase3] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -16,6 +21,31 @@ export default function HeroSection() {
     });
     return () => cancelAnimationFrame(id);
   }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    // Show first phrase after paragraph appears
+    const timer1 = setTimeout(() => {
+      setShowPhrase1(true);
+    }, 1000); // 1 second after hero animation starts
+
+    // Show second phrase
+    const timer2 = setTimeout(() => {
+      setShowPhrase2(true);
+    }, 2000); // 2 seconds
+
+    // Show third phrase
+    const timer3 = setTimeout(() => {
+      setShowPhrase3(true);
+    }, 3000); // 3 seconds
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+    };
+  }, [isVisible]);
 
   return (
     <section ref={sectionRef} className="relative bg-white -mt-8">
@@ -52,7 +82,7 @@ export default function HeroSection() {
               style={{
                 fontFamily: 'Georgia, serif',
                 fontSize: '2.2rem',
-                color: '#000000',
+                color: '#000',
                 textAlign: 'left',
                 lineHeight: '1.2',
                 fontWeight: '500',
@@ -64,22 +94,50 @@ export default function HeroSection() {
 
             {/* Paragraph */}
             <p
-              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} text-lg mb-5 mt-8 max-w-xl`}
+              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} text-lg mb-3 mt-8 max-w-xl`}
               style={{ color: '#262626E6', fontWeight: 360, transitionDelay: '240ms' }}
             >
               We help founders and professionals shape a compelling story that
               secures endorsement and leads to a confident UK visa application.
-              <br />
-              Build the case. Earn the endorsement. Get approved!
             </p>
+            
+            {/* Animated CTA Text - Sequential */}
+            <div className="text-lg italic max-w-xl">
+              <span
+                className={`inline-block transition-all duration-500 ${
+                  showPhrase1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                }`}
+                style={{ color: '#262626E6' }}
+              >
+                Build your case.
+              </span>
+              <span className="mx-2" style={{ color: '#262626E6' }}> </span>
+              <span
+                className={`inline-block transition-all duration-500 ${
+                  showPhrase2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                }`}
+                style={{ color: '#262626E6' }}
+              >
+                Earn the endorsement.
+              </span>
+              <span className="mx-2" style={{ color: '#262626E6' }}> </span>
+              <span
+                className={`inline-block transition-all duration-500 ${
+                  showPhrase3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                }`}
+                style={{ color: '#262626E6' }}
+              >
+                Get approved!
+              </span>
+            </div>
 
             {/* CTA */}
             <div
               className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} mt-3 flex flex-col sm:flex-row items-start sm:items-center gap-4`}
               style={{ transitionDelay: '360ms' }}
             >
-              <Link
-                href="/innovator-founder-visa"
+              <button
+                onClick={() => setIsCalendlyOpen(true)}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium transition-all duration-200 hover:scale-105"
                 style={{
                   backgroundColor: '#e6ff32',
@@ -95,7 +153,7 @@ export default function HeroSection() {
                 <span className="ml-2" aria-hidden="true">
                   →
                 </span>
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -155,6 +213,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+      <CalendlyModal isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </section>
   );
 }
