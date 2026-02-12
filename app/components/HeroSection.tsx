@@ -10,7 +10,6 @@ export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [showPhrase1, setShowPhrase1] = useState(false);
-  const [showPhrase2, setShowPhrase2] = useState(false);
   const [showPhrase3, setShowPhrase3] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -30,19 +29,13 @@ export default function HeroSection() {
       setShowPhrase1(true);
     }, 1000); // 1 second after hero animation starts
 
-    // Show second phrase
-    const timer2 = setTimeout(() => {
-      setShowPhrase2(true);
-    }, 2000); // 2 seconds
-
     // Show third phrase
     const timer3 = setTimeout(() => {
       setShowPhrase3(true);
-    }, 3000); // 3 seconds
+    }, 2000); // 2 seconds
 
     return () => {
       clearTimeout(timer1);
-      clearTimeout(timer2);
       clearTimeout(timer3);
     };
   }, [isVisible]);
@@ -102,7 +95,7 @@ export default function HeroSection() {
             </p>
             
             {/* Animated CTA Text - Sequential */}
-            <div className="text-lg max-w-xl bg-gray-100 px-4 py-3 rounded-lg inline-block">
+            <div className="text-lg w-fit bg-gray-100 px-4 py-3 rounded-lg inline-block whitespace-nowrap overflow-x-auto">
               <span
                 className={`inline-block transition-all duration-500 ${
                   showPhrase1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
@@ -110,15 +103,6 @@ export default function HeroSection() {
                 style={{ color: '#262626E6' }}
               >
                 Build your case.
-              </span>
-              <span className="mx-2" style={{ color: '#262626E6' }}> </span>
-              <span
-                className={`inline-block transition-all duration-500 ${
-                  showPhrase2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                }`}
-                style={{ color: '#262626E6' }}
-              >
-                Earn the endorsement.
               </span>
               <span className="mx-2" style={{ color: '#262626E6' }}> </span>
               <span
