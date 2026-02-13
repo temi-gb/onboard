@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import CalendlyModal from './CalendlyModal';
+import { openCalendlyPopup } from './CalendlyModal';
 
 interface BookSessionButtonProps {
   className?: string;
@@ -16,8 +15,6 @@ export default function BookSessionButton({
   children = 'Book a session',
   variant = 'default',
 }: BookSessionButtonProps) {
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
-
   const defaultStyles: React.CSSProperties = {
     ...(variant === 'default' && {
       backgroundColor: '#e6ff32',
@@ -48,16 +45,12 @@ export default function BookSessionButton({
   };
 
   return (
-    <>
-      <button
-        onClick={() => setIsCalendlyOpen(true)}
-        className={className}
-        style={defaultStyles}
-      >
-        {children}
-      </button>
-      <CalendlyModal isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
-    </>
+    <button
+      onClick={() => openCalendlyPopup()}
+      className={className}
+      style={defaultStyles}
+    >
+      {children}
+    </button>
   );
 }
-

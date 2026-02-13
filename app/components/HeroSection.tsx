@@ -4,11 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AnimatedStatCard from './AnimatedStatCard';
-import CalendlyModal from './CalendlyModal';
+import { openCalendlyPopup } from './CalendlyModal';
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [showPhrase1, setShowPhrase1] = useState(false);
   const [showPhrase3, setShowPhrase3] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -95,18 +94,21 @@ export default function HeroSection() {
             </p>
             
             {/* Animated CTA Text - Sequential */}
-            <div className="text-lg w-fit bg-gray-100 px-4 py-3 rounded-lg inline-block whitespace-nowrap overflow-x-auto">
+            <div className="text-lg w-fit whitespace-nowrap overflow-x-auto hero-cta-blob">
               <span
-                className={`inline-block transition-all duration-500 ${
+                className={`transition-all duration-500 ${
                   showPhrase1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                 }`}
                 style={{ color: '#262626E6' }}
               >
+                <svg className="w-5 h-5 mr-1 inline-block" style={{ verticalAlign: '-0.15em' }} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                </svg>
                 Build your case.
               </span>
-              <span className="mx-2" style={{ color: '#262626E6' }}> </span>
+              <span className="mx-2"> </span>
               <span
-                className={`inline-block transition-all duration-500 ${
+                className={`transition-all duration-500 ${
                   showPhrase3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                 }`}
                 style={{ color: '#262626E6' }}
@@ -117,11 +119,11 @@ export default function HeroSection() {
 
             {/* CTA */}
             <div
-              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} mt-3 flex flex-col sm:flex-row items-start sm:items-center gap-4`}
+              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4`}
               style={{ transitionDelay: '360ms' }}
             >
               <button
-                onClick={() => setIsCalendlyOpen(true)}
+                onClick={() => openCalendlyPopup()}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium transition-all duration-200 hover:scale-105"
                 style={{
                   backgroundColor: '#e6ff32',
@@ -197,7 +199,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <CalendlyModal isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </section>
   );
 }
