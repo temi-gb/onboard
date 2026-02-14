@@ -94,7 +94,7 @@ export default function HeroSection() {
             </p>
             
             {/* Animated CTA Text - Sequential */}
-            <div className="text-sm sm:text-lg w-fit whitespace-nowrap hero-cta-blob">
+            <div className="text-sm sm:text-base w-fit whitespace-nowrap hero-cta-blob">
               <span
                 className={`transition-all duration-500 ${
                   showPhrase1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
@@ -126,7 +126,7 @@ export default function HeroSection() {
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#e6ff32', border: '0.5px solid #000' }}>
                   <svg
-                    className={`w-6 h-6 text-black book-session-arrow ${isButtonHovered ? 'arrow-animate-hover' : ''}`}
+                    className={`w-6 h-6 text-black book-session-arrow arrow-animate-continuous ${isButtonHovered ? 'arrow-animate-hover' : ''}`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

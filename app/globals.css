@@ -230,6 +230,21 @@ html {
   background: #f3f4f6;
 }
 
+/* Continuous arrow animation */
+@keyframes arrow-slide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.arrow-animate-continuous {
+  animation: arrow-slide 2s ease-in-out infinite;
+  will-change: transform;
+}
+
 /* Book a session button arrow hover animation */
 @keyframes arrow-slide-right-return {
   0% {
@@ -263,5 +278,9 @@ html {
     transition: none;
     opacity: 1;
     transform: none;
+  }
+  
+  .arrow-animate-continuous {
+    animation: none;
   }
 }
