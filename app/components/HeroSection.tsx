@@ -10,6 +10,7 @@ export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [showPhrase1, setShowPhrase1] = useState(false);
   const [showPhrase3, setShowPhrase3] = useState(false);
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -70,10 +71,9 @@ export default function HeroSection() {
 
             {/* Heading */}
             <h1
-              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} text-3xl sm:text-4xl lg:text-5xl`}
+              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} text-[2.0rem] sm:text-[2.4rem]`}
               style={{
                 fontFamily: 'Georgia, serif',
-                fontSize: '2.2rem',
                 color: '#000',
                 textAlign: 'left',
                 lineHeight: '1.2',
@@ -119,12 +119,35 @@ export default function HeroSection() {
 
             {/* CTA */}
             <div
-              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4`}
+              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} mt-6 flex flex-row items-center gap-2 group`}
               style={{ transitionDelay: '360ms' }}
             >
+              {/* Icon before button */}
+              <div className="flex items-center">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#e6ff32', border: '0.5px solid #000' }}>
+                  <svg
+                    className={`w-6 h-6 text-black book-session-arrow ${isButtonHovered ? 'arrow-animate-hover' : ''}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M11 7l7 5m0 0l-7 5m7-5H4"
+                    />
+                  </svg>
+                </div>
+              </div>
               <button
+                onMouseEnter={() => {
+                  setIsButtonHovered(false);
+                  setTimeout(() => setIsButtonHovered(true), 10);
+                }}
+                onMouseLeave={() => setIsButtonHovered(false)}
                 onClick={() => openCalendlyPopup()}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium transition-all duration-200 hover:scale-105"
+                className="book-session-btn inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium transition-all duration-200 hover:scale-105"
                 style={{
                   backgroundColor: '#e6ff32',
                   color: '#000',
@@ -135,10 +158,7 @@ export default function HeroSection() {
                   boxShadow: '0 2px 8px rgba(230, 255, 50, 0.3)',
                 }}
               >
-                Book a session{' '}
-                <span className="ml-2" aria-hidden="true">
-                  →
-                </span>
+                Book a session
               </button>
             </div>
           </div>
