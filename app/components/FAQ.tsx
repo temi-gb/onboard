@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface FAQItem {
   question: string;
@@ -57,13 +57,33 @@ const faqData: FAQItem[] = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const toggleItem = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section id="faq" className="bg-white py-20 px-6 sm:px-8 lg:px-12">
+    <section ref={sectionRef} id="faq" className="bg-white py-20 px-6 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-4xl">
         <h2
           className="text-center mb-12 text-3xl sm:text-4xl lg:text-5xl"
@@ -71,6 +91,9 @@ export default function FAQ() {
             fontFamily: 'Ivyprestoheadline, Georgia, sans-serif',
             color: '#090909',
             fontWeight: 500,
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
+            transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
           }}
         >
           Frequently asked questions
@@ -81,7 +104,14 @@ export default function FAQ() {
             const isOpen = openIndex === index;
 
             return (
-              <div key={index}>
+              <div
+                key={index}
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transition: `opacity 0.5s ease-out ${0.15 + index * 0.06}s, transform 0.5s ease-out ${0.15 + index * 0.06}s`,
+                }}
+              >
                 {/* Question Box */}
                 <button
                   onClick={() => toggleItem(index)}
@@ -144,4 +174,3 @@ export default function FAQ() {
     </section>
   );
 }
-

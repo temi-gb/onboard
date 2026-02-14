@@ -94,7 +94,7 @@ export default function HeroSection() {
             </p>
             
             {/* Animated CTA Text - Sequential */}
-            <div className="text-lg w-fit whitespace-nowrap overflow-x-auto hero-cta-blob">
+            <div className="text-sm sm:text-lg w-fit whitespace-nowrap hero-cta-blob">
               <span
                 className={`transition-all duration-500 ${
                   showPhrase1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
@@ -106,7 +106,7 @@ export default function HeroSection() {
                 </svg>
                 Build your case.
               </span>
-              <span className="mx-2"> </span>
+              <span className="mx-2" style={{ color: '#262626E6' }}>|</span>
               <span
                 className={`transition-all duration-500 ${
                   showPhrase3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'

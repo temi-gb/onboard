@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,20 +18,13 @@ export default function Footer() {
             className="flex items-center space-x-2 mb-6 md:mb-0"
             aria-label="OnboardVisa Home"
           >
-            <svg
-              className="w-8 h-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-              />
-            </svg>
+            <Image
+              src="/onboard_icon.svg"
+              alt="OnboardVisa icon"
+              width={40}
+              height={24}
+              className="object-contain w-10 h-7"
+            />
             <span className="text-xl font-semibold text-white">OnboardVisa</span>
           </Link>
 
@@ -40,34 +34,22 @@ export default function Footer() {
               href="/innovator-founder-visa"
               className="text-sm font-medium text-white hover:opacity-70 transition-opacity"
             >
-              Services
+              Innovator Founder Visa
             </Link>
             <Link
-              href="/blog"
+              href="/global-talent-visa"
               className="text-sm font-medium text-white hover:opacity-70 transition-opacity"
             >
-              Pricing
+              Global Talent Visa
             </Link>
             <Link
               href="/testimonials"
               className="text-sm font-medium text-white hover:opacity-70 transition-opacity"
             >
-              Testimonial
+              Testimonials
             </Link>
             <Link
-              href="/blog"
-              className="text-sm font-medium text-white hover:opacity-70 transition-opacity"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/testimonials"
-              className="text-sm font-medium text-white hover:opacity-70 transition-opacity"
-            >
-              Contact Us
-            </Link>
-            <Link
-              href="/blog"
+              href="/data-protection-policy"
               className="text-sm font-medium text-white hover:opacity-70 transition-opacity"
             >
               Data Protection Policy
