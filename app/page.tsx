@@ -83,15 +83,15 @@ export default function Home() {
                 Visa rules change, expectations shift, and endorsing bodies look for clarity — not effort.
                 <br />
                 We work alongside founders and professionals to refine positioning, strengthen evidence, and prepare applications built for approval.
-              </p>
-            </div>
+          </p>
+        </div>
 
             {/* Main Content Area */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Image */}
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-        <Image
+            <Image
                     src="/xd.png"
                     alt="Professional UK visa consultation and partnership services"
                     fill

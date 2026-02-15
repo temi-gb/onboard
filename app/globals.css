@@ -241,7 +241,7 @@ html {
 }
 
 .arrow-animate-continuous {
-  animation: arrow-slide 2s ease-in-out infinite;
+  animation: arrow-slide 1.5s ease-in-out infinite;
   will-change: transform;
 }
 

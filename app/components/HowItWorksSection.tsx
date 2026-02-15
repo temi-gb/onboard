@@ -62,7 +62,7 @@ function AnimatedChecklist({ items }: AnimatedChecklistProps) {
 
   return (
     <div ref={containerRef}>
-      <div className="space-y-3 mb-4">
+      <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4">
         {items.map((label, index) => {
           const isComplete = index < step;
           const isCurrent = index === step;
@@ -70,12 +70,12 @@ function AnimatedChecklist({ items }: AnimatedChecklistProps) {
           return (
             <div
               key={label}
-              className={`flex items-center gap-3 transition-all duration-400 ${
+              className={`flex items-start gap-2 sm:gap-3 transition-all duration-400 ${
                 isComplete || isCurrent ? 'opacity-100 translate-y-0' : 'opacity-60 translate-y-1'
               }`}
             >
               <div
-                className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
+                className={`w-5 h-5 sm:w-5 sm:h-5 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 mt-0.5 ${
                   isComplete
                     ? 'bg-[#e6ff32]'
                     : 'border-2 border-gray-300 bg-white'
@@ -98,7 +98,7 @@ function AnimatedChecklist({ items }: AnimatedChecklistProps) {
                 )}
               </div>
               <span
-                className={`text-sm transition-colors duration-300 ${
+                className={`text-xs sm:text-sm leading-relaxed transition-colors duration-300 flex-1 ${
                   isComplete ? 'text-[#171717]' : 'text-gray-500'
                 }`}
               >
@@ -186,7 +186,7 @@ export default function HowItWorksSection() {
           </div>
 
           {/* Right Panel - Visual Elements */}
-          <div className="relative h-[500px] overflow-hidden">
+          <div className="relative h-[500px] sm:h-[500px] lg:h-[500px] overflow-hidden">
             {/* Blurred Background */}
             <div 
               className="absolute inset-0 bg-cover bg-center"
@@ -198,20 +198,22 @@ export default function HowItWorksSection() {
             />
             
             {/* Overlay Content */}
-            <div className="relative h-full flex flex-col items-center justify-center p-8">
+            <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
               {/* Visa Type Badge */}
-              <div className="bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg">
-                <span className="text-lg font-semibold text-[#171717]">Innovator Founder Visa</span>
+              <div className="bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 sm:px-6 sm:py-3 mb-3 sm:mb-4 lg:mb-6 shadow-lg">
+                <span className="text-sm sm:text-base lg:text-lg font-semibold text-[#171717]">Innovator Founder Visa</span>
               </div>
 
               {/* Application Card UI */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-2xl max-w-md w-full">
-                <h4 className="text-xl font-semibold text-[#171717] mb-4">Application Checklist</h4>
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 sm:p-5 lg:p-6 shadow-2xl max-w-md w-full mx-2 sm:mx-4">
+                <h4 className="text-lg sm:text-xl font-semibold text-[#171717] mb-3 sm:mb-4">Application Checklist</h4>
                 <AnimatedChecklist
                   items={[
-                    'Business plan prepared',
-                    'Supporting documents ready',
-                    'Application submitted',
+                    'Innovation clearly defined',
+                    'Viability supported with financial planning',
+                    'Scalability backed by a realistic growth strategy',
+                    "Founder's active role and expertise demonstrated",
+                    'Endorsement-ready application submitted',
                   ]}
                 />
               </div>
@@ -236,20 +238,22 @@ export default function HowItWorksSection() {
             />
             
             {/* Overlay Content */}
-            <div className="relative h-full flex flex-col items-center justify-center p-8">
+            <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
               {/* Visa Type Badge */}
-              <div className="bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg">
-                <span className="text-lg font-semibold text-[#171717]">Global Talent Visa</span>
+              <div className="bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 sm:px-6 sm:py-3 mb-3 sm:mb-4 lg:mb-6 shadow-lg">
+                <span className="text-sm sm:text-base lg:text-lg font-semibold text-[#171717]">Global Talent Visa</span>
               </div>
 
               {/* Application Card UI */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-2xl max-w-md w-full">
-                <h4 className="text-xl font-semibold text-[#171717] mb-4">Application Checklist</h4>
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 sm:p-5 lg:p-6 shadow-2xl max-w-md w-full mx-2 sm:mx-4">
+                <h4 className="text-lg sm:text-xl font-semibold text-[#171717] mb-3 sm:mb-4">Application Checklist</h4>
                 <AnimatedChecklist
                   items={[
-                    'Endorsement application ready',
-                    'Portfolio and evidence prepared',
-                    'Visa application submitted',
+                    'Exceptional Talent or Promise criteria clearly identified',
+                    'Professional achievements evidenced with measurable impact',
+                    'Independent recognition and references secured',
+                    'Structured portfolio aligned with endorsement criteria',
+                    'Endorsement-ready application package completed',
                   ]}
                 />
               </div>
