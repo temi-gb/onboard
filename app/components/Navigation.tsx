@@ -76,6 +76,7 @@ export default function Navigation() {
                 width={16}
                 height={16}
                 className="object-contain"
+                unoptimized
               />
             </button>
           </div>

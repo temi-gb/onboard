@@ -42,7 +42,7 @@ export default function HeroSection() {
 
   return (
     <section ref={sectionRef} className="relative bg-white -mt-8">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-2">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12 items-center min-h-[calc(100vh-4rem)] py-16 lg:py-24">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
@@ -71,7 +71,7 @@ export default function HeroSection() {
 
             {/* Heading */}
             <h1
-              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} text-[2.0rem] sm:text-[2.4rem]`}
+              className={`hero-animate ${isVisible ? 'hero-animate-in' : ''} text-[2.0rem] sm:text-[2.4rem] lg:text-[3.0rem]`}
               style={{
                 fontFamily: 'Georgia, serif',
                 color: '#000',
