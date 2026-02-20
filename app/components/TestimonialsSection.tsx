@@ -15,10 +15,10 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Sarah Chen',
-    handle: '@sarahchen_tech',
+    name: 'John',
+    handle: '',
     quote: 'OnboardVisa helped me secure my Innovator Founder Visa endorsement. Their strategic guidance made all the difference in presenting my business case compellingly.',
-    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+    avatar: '/John.avif',
     color: '#8b2635',
     rotation: 0,
     zIndex: 1,
@@ -145,11 +145,13 @@ export default function TestimonialsSection() {
                             }`}>
                               {testimonial.name}
                             </div>
-                            <div className={`text-xs sm:text-sm opacity-70 ${
-                              index === 0 ? 'text-white' : 'text-[#090909]'
-                            }`}>
-                              {testimonial.handle}
-                            </div>
+                            {testimonial.handle && (
+                              <div className={`text-xs sm:text-sm opacity-70 ${
+                                index === 0 ? 'text-white' : 'text-[#090909]'
+                              }`}>
+                                {testimonial.handle}
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
