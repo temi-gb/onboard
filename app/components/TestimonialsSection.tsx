@@ -24,10 +24,10 @@ const testimonials: Testimonial[] = [
     zIndex: 1,
   },
   {
-    name: 'Michael Rodriguez',
-    handle: '@mrodriguez_research',
+    name: 'Tomi',
+    handle: '',
     quote: 'The team at OnboardVisa transformed my Global Talent Visa application. Their expertise in storytelling and evidence preparation was invaluable.',
-    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+    avatar: '/tomi.avif',
     color: '#A855F7', // Purple
     rotation: 0,
     zIndex: 2,
