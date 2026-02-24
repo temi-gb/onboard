@@ -12,8 +12,9 @@ import AnimatedServicesSection from './components/AnimatedServicesSection';
 
 export const metadata: Metadata = generateMetadata({
   title: 'Home',
+  fullTitle: 'Onboardvisa – UK Innovator Founder & Global Talent Visa Experts',
   description:
-    'Expert visa and immigration services for innovators, founders, and global talent. Navigate international relocation with confidence through our professional guidance.',
+    'Helping you move to the UK on the Innovator Founder or Global Talent visa — with confidence.',
   path: '/',
   keywords: [
     'visa services',

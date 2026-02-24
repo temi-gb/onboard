@@ -7,18 +7,20 @@ const defaultDescription =
 
 export function generateMetadata({
   title,
+  fullTitle: fullTitleOverride,
   description = defaultDescription,
   path = '',
   keywords,
   ogImage,
 }: {
   title: string;
+  fullTitle?: string;
   description?: string;
   path?: string;
   keywords?: string[];
   ogImage?: string;
 }): Metadata {
-  const fullTitle = `${title} | ${siteName}`;
+  const fullTitle = fullTitleOverride ?? `${title} | ${siteName}`;
   const url = `${siteUrl}${path}`;
   const image = ogImage || `${siteUrl}/og-image.jpg`;
 

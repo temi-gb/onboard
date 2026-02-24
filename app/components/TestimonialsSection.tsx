@@ -66,7 +66,7 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="bg-black pt-8 pb-10 px-6 sm:px-8 lg:px-12">
+    <section id="testimonials" className="bg-black pt-8 pb-10 px-6 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <div className="pt-3 pb-5 px-6 lg:pt-5 lg:pb-6 lg:px-8">
           {/* Header Section */}

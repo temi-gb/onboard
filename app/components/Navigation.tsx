@@ -9,7 +9,7 @@ import { openCalendlyPopup } from './CalendlyModal';
 const navItems = [
   { href: '/innovator-founder-visa', label: 'Innovator Founder Visa', hasDropdown: false },
   { href: '/global-talent-visa', label: 'Global Talent Visa', hasDropdown: false },
-  { href: '/testimonials', label: 'Testimonials', hasDropdown: false },
+  { href: '/#testimonials', label: 'Testimonials', hasDropdown: false },
   // Blog is intentionally hidden from the navigation menu
 ];
 
@@ -28,6 +28,9 @@ export default function Navigation() {
 
   const isActive = (href: string) => {
     if (href === '/') {
+      return pathname === '/';
+    }
+    if (href === '/#testimonials') {
       return pathname === '/';
     }
     return pathname?.startsWith(href);

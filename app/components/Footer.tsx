@@ -43,7 +43,7 @@ export default function Footer() {
               Global Talent Visa
             </Link>
             <Link
-              href="/testimonials"
+              href="/#testimonials"
               className="text-sm font-medium text-white hover:opacity-70 transition-opacity"
             >
               Testimonials
